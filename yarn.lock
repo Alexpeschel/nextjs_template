@@ -10097,7 +10097,6 @@ __metadata:
     eslint-plugin-storybook: "npm:^0.8.0"
     lint-staged: "npm:^15.2.5"
     next: "npm:14.2.3"
-    postcss: "npm:^8.4.38"
     postcss-styled-syntax: "npm:^0.6.4"
     postcss-syntax: "npm:^0.36.2"
     prettier: "npm:^3.3.1"
