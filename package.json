@@ -18,7 +18,8 @@
     "format:fix": "prettier --write --ignore-path .gitignore .",
     "storybook": "storybook dev -p 1337",
     "build-storybook": "storybook build",
-    "prepare": "git config core.hooksPath .hooks"
+    "prepare": "git config core.hooksPath .hooks",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "next": "14.2.3",
@@ -59,6 +60,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
+      "bash -c 'tsc --noEmit'",
       "prettier --write --ignore-path .gitignore",
       "next lint"
     ],
