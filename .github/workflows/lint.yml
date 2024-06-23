@@ -1,0 +1,26 @@
+name: Lint and Format
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: Install
+        run: yarn install --frozen-lockfile
+      - name: ESLint
+        run: yarn lint:fix
+      - name: StyleLint
+        run: yarn lint:css:fix
+      - name: Prettier
+        run: yarn format:fix
